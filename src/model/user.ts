@@ -8,6 +8,9 @@ export const UserDB = 'User';
 @Schema({ versionKey: false, collection: 'user' })
 export class UserModel extends BaseModel {
     @Prop({ required: true, type: String })
+    googleId: string;
+
+    @Prop({ required: true, type: String })
     fullname: string;
 
     @Prop({ required: false, type: String })

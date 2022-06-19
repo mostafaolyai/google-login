@@ -10,6 +10,7 @@ import { UserModule } from './user-service/user.module';
 
 //.env config
 import * as dotenv from 'dotenv';
+import { GoogleStrategy } from './auth/strategy/google.strategy';
 dotenv.config();
 
 @Module({
@@ -27,7 +28,7 @@ dotenv.config();
     controllers: [AppController],
     providers: [
         AppService,
-
+        GoogleStrategy,
         // make sure all APIs are only accessed by logged-in users
         // unless you specify otherwise, with {@link Public} decorator
         {
